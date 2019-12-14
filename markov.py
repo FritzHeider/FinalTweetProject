@@ -38,6 +38,8 @@ def second_order():
 		else:
 			markov[(first_word, middle_word)].add_count(last_word)
 
+		return markov[]
+
 def get_tuples(word):
 	markov = second_order()
 	all_tuples = []
@@ -45,6 +47,7 @@ def get_tuples(word):
 	for each_tuple in list(markov):
 		if word == each_tuple[0]:
 			all_tuples.append(each_tuple)
+			return all_tuples
 
 
 
@@ -54,13 +57,14 @@ def generate_sentence():
 	sentence = " " + word
 	for i in range(7):
 		pair_choice = choice(get_tuples(word))
-		
+		return pair_choice
 
 
 
 
-#
-# print(markov)
-print(first_order())
-#print(second_order())
-print(create_sentence(first_order()))
+
+# #
+# # print(markov)
+# print(first_order())
+# #print(second_order())
+ print(create_sentence(first_order()))
