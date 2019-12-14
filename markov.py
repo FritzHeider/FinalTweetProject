@@ -13,14 +13,14 @@ def first_order():
 	for index in range(len(sample_text) - 1):
 		markov[sample_text[index]].add_count(sample_text[index + 1])
 
-	# print(markov['fish'].sample())
+	print(markov['fish'].sample())
 	sentence = " "
 	word = choice(list(markov.keys()))
 	sentence += word
 	for i in range(4):
 		word = markov[word].sample()
 		sentence += " " + word
-	# return print(sentence)
+	return print(sentence)
 
 
 def second_order():
