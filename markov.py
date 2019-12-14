@@ -1,7 +1,10 @@
 from dictogram import Dictogram
 from random import choice
 from analyze import read_file
+from clean_up import create_sentence
 
+
+#sample_text = "one fish two fish red fish blue fish"
 sample_text = read_file('siddhartha.txt')
 markov = {}
 
@@ -13,14 +16,14 @@ def first_order():
 	for index in range(len(sample_text) - 1):
 		markov[sample_text[index]].add_count(sample_text[index + 1])
 
-	print(markov['fish'].sample())
+	# print(markov['fish'].sample())
 	sentence = " "
 	word = choice(list(markov.keys()))
 	sentence += word
-	for i in range(4):
+	for i in range(10):
 		word = markov[word].sample()
 		sentence += " " + word
-	return print(sentence)
+	return sentence
 
 
 def second_order():
@@ -46,8 +49,18 @@ def get_tuples(word):
 
 
 def generate_sentence():
-	markov = second_order()
+	markov = first_order()
 	word = choice(choice(list(markov)))
 	sentence = " " + word
 	for i in range(7):
 		pair_choice = choice(get_tuples(word))
+		
+
+
+
+
+#
+# print(markov)
+print(first_order())
+#print(second_order())
+print(create_sentence(first_order()))

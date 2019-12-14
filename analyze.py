@@ -1,4 +1,6 @@
 
+
+
 def read_file(file):
 	with open(file) as book:
 		data = book.readlines()
@@ -48,4 +50,4 @@ def calculate_histogram_tuples(source_text):
 	return print(histogram)
 
 
-# (calculate_histogram_dict('siddhartha.txt'))
+print(calculate_histogram_tuples('siddhartha.txt'))
